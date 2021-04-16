@@ -44,6 +44,7 @@ export default function Courusel() {
         }
     }
 
+
     return (
             <div className={styles.sizingPadding}>
         <div className={styles.sizingMargin + ' ' + styles.imgSlider}>
@@ -67,7 +68,11 @@ export default function Courusel() {
                         <div
                             className={styles.imgSlider__pointBox__point} 
                             key={index} 
-
+                            onClick={() => {
+                                posChange(-index*100);
+                                slide(index)
+                                }
+                            }
                             style={{   backgroundColor:  (slideNumber == index) ? 'white' : 'gray' }} 
                         ></div>
                     )

@@ -13,13 +13,10 @@ export default function Slider() {
        
 
    const leftHandler = () => {
-        if (slideNumber === 0) {
-            slide(slideNumber +1)   
-            posChange(positionImg - 100)
-        } else {
-            slide(slideNumber -1) 
-            posChange(positionImg + 100)
-        }
+       if(!slideNumber) {
+        slide(slideNumber -1) 
+        posChange(positionImg + 100)
+       }
     }
 
     const rightHandler = () => {
@@ -40,19 +37,21 @@ export default function Slider() {
              <div className={styles.Brings__newBrings}>
                 <div className={styles.Brings__newBrings__newBringsText}>Новое поступление</div>
                 <div className={styles.Brings__newBrings__Arrows}>
-                    <div className={styles.Brings__newBrings__Arrows__BigArrow}> {`<`}- </div>
-                    <div className={styles.Brings__newBrings__Arrows__BigArrow}> -{`>`} </div>
+                    <div onClick={leftHandler} className={styles.Brings__newBrings__Arrows__BigArrow}> {`<`}- </div>
+                    <div onClick={rightHandler} className={styles.Brings__newBrings__Arrows__BigArrow}> -{`>`} </div>
                 </div>
             </div>
             <div className={styles.Brings__row}>
-                <SliderItem1 />
-            {/* {
+                {/* <SliderItem1 /> */}
+            {
                 array.map((e,index) => {
                     return (
-                        <SliderItem1 key={index+101} />
+                        
+                        <SliderItem1  key={index+101}  />
+                        
                     )    
                 })
-            }  */}
+            } 
             </div>
              </div>
             
