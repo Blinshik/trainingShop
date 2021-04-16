@@ -1,0 +1,42 @@
+.sizingPadding {
+    padding-right: 40px;
+    padding-left: 40px;
+    box-sizing: border-box;
+}
+
+.sizingMargin {
+    margin: 0 auto;
+    box-sizing: border-box;
+    max-width: 1408px;
+}
+
+.Brings {
+    padding: 30px 0;
+    overflow: hidden;
+
+    &__newBrings {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+
+        &__newBringsText {
+            font-weight: 700;
+            font-size: 40px;
+        }
+
+        &__Arrows {
+            display: flex;
+
+            &__BigArrow {
+                margin-right: 15px;
+            
+                font-size: 35px;
+                font-weight: 600;
+            }
+        }
+
+        &__row {
+            display: flex;
+        }
+    }
+}

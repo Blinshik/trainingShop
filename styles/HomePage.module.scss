@@ -1,0 +1,196 @@
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sizingPadding {
+    padding-right: 40px;
+    padding-left: 40px;
+    box-sizing: border-box;
+}
+
+.sizingMargin {
+    margin: 0 auto;
+    box-sizing: border-box;
+    max-width: 1408px;
+}
+
+.imgSlider {
+    height: 470px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    position: relative;
+    overflow: hidden;
+}
+
+.slider {
+    height: inherit;
+    width: inherit;
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    color:  black;
+    background: no-repeat center;
+}
+
+.leftArrow {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 45px;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+
+.rightArrow {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 45px;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+
+.Brings {
+    padding: 30px 0;
+}
+
+.newBrings {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.newBringsText {
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.Arrows {
+    display: flex;
+}
+
+.BigArrow {
+    margin-right: 15px;
+
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.newBringsSliderItem {
+    position: relative;
+    width: 220px;
+    height: 380px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 15px;
+}
+
+
+
+.newBringsSliderItemImg {
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.newBringsSliderItemSale {
+    position: absolute;
+    top: 5;
+    left: 5;
+    background-color: red;
+    border-radius: 6px;
+    padding: 2px;
+    color: white;
+}
+
+.afterImg {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.newBringsSliderItemInfoPriceOld {
+    text-decoration: line-through;
+    color: #999999;
+}
+
+.newBringsSliderItemInfoPriceNew {
+    font-weight: 600;
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.newBringsSliderItemBtn {
+    width: 100%;
+    height: 40px;
+    background-color: green;
+    padding: 0 16px;
+    border-radius: 5px;
+    color: white;
+}
+
+.lines {
+    padding: 16px 0;
+}
+
+.line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.firstLineItem {
+    width: 49.5%;
+}
+
+.secondLineItem {
+    width: 32.8%;
+}
+
+.firstLineItemImg {
+    width: 100%;
+    /* height: 100%; */
+}
+.firstLineItemText {
+    padding: 16px 24px;
+}
+
+.secondLineItemImg {
+    width: 100%;
+    /* height: 100%; */
+}
+
+.orderInfoText {
+    background: no-repeat center;
+    background-image: url(/info_2.jpg);
+    
+    padding: 16px 40px;
+}
+
+.orderInfoTextImg {
+   
+    margin: 3rem auto;
+}
+
+.headOrderText {
+    color: white;
+    font-weight: 600;
+    font-size: 35px;
+}
+
+.orderText {
+    color: white;
+    margin: 30px 0;
+}
+
+.newBringsSliderItemJuice {
+    height: 340px;
+}
