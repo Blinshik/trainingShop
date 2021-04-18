@@ -14,7 +14,7 @@ export default function Slider() {
 
    const leftHandler = () => {
        if(!slideNumber) {
-        slide(slideNumber -1) 
+        slide(slideNumber - 1) 
         posChange(positionImg + 100)
        }
     }
@@ -29,6 +29,10 @@ export default function Slider() {
         }
     }
 
+    const clickHandler = (e) => {
+        console.log(e)
+    }
+
 
     return (
         <div className={styles.sizingPadding}>
@@ -41,13 +45,12 @@ export default function Slider() {
                     <div onClick={rightHandler} className={styles.Brings__newBrings__Arrows__BigArrow}> -{`>`} </div>
                 </div>
             </div>
-            <div className={styles.Brings__row}>
-                {/* <SliderItem1 /> */}
+            <div className={styles.Brings__row} onClick={clickHandler}>
             {
                 array.map((e,index) => {
                     return (
                         
-                        <SliderItem1  key={index+101}  />
+                        <SliderItem1  key={index+101}  onClick={clickHandler} />
                         
                     )    
                 })

@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from '../styles/SliderItem1.module.scss'
+import Icon from '@material-ui/core/Icon';
 
 export default function SliderItem1() {
     return (
@@ -12,7 +13,12 @@ export default function SliderItem1() {
                         <div>
                             <div className={styles.newBringsSlider__item__afterImg__priceOld}>135 руб</div>
                             <div className={styles.newBringsSlider__item__afterImg__priceNew}>59 руб</div>
-                            <button className={styles.newBringsSlider__item__afterImg__priceBtn}>В корзину</button>
+                            <button className={styles.newBringsSlider__item__afterImg__priceBtn}>
+                                В корзину
+                                <Icon>
+                                    shopping_cart
+                                </Icon>
+                            </button>
                         </div>
                 </div>
             </div>
