@@ -4,8 +4,8 @@ import SliderItem1 from '../components/SliderItem1.js'
 
 
 export default function Slider() {
-    const array = [1,2,3,4,5,6,7,8]
-    
+    const array = ['1q','2w','3e','4r','5t','6y','7u','8i']
+    const numberArr = 6;
 
     const [positionImg, posChange] = useState(0);
 
@@ -13,24 +13,17 @@ export default function Slider() {
        
 
    const leftHandler = () => {
-       if(!slideNumber) {
+       if(slideNumber) {
         slide(slideNumber - 1) 
         posChange(positionImg + 100)
        }
     }
 
     const rightHandler = () => {
-        if (slideNumber === array.length-1) {
-            slide(slideNumber -1)   
-            posChange(positionImg + 100)
-        } else {
-            slide(slideNumber +1) 
+        if (slideNumber != array.length - numberArr ) {
+            slide(slideNumber + 1) 
             posChange(positionImg - 100)
         }
-    }
-
-    const clickHandler = (e) => {
-        console.log(e)
     }
 
 
@@ -41,23 +34,33 @@ export default function Slider() {
              <div className={styles.Brings__newBrings}>
                 <div className={styles.Brings__newBrings__newBringsText}>Новое поступление</div>
                 <div className={styles.Brings__newBrings__Arrows}>
-                    <div onClick={leftHandler} className={styles.Brings__newBrings__Arrows__BigArrow}> {`<`}- </div>
-                    <div onClick={rightHandler} className={styles.Brings__newBrings__Arrows__BigArrow}> -{`>`} </div>
+                    <button onClick={leftHandler} className={styles.Brings__newBrings__Arrows__BigArrow}> {`<`}- </button>
+                    <button onClick={rightHandler} className={styles.Brings__newBrings__Arrows__BigArrow}> -{`>`} </button>
                 </div>
             </div>
-            <div className={styles.Brings__row} onClick={clickHandler}>
-            {
-                array.map((e,index) => {
-                    return (
-                        
-                        <SliderItem1  key={index+101}  onClick={clickHandler} />
-                        
-                    )    
-                })
-            } 
-            </div>
+            <div className={styles.Brings__rowUp}>
+                <div className={styles.Brings__rowUp__row}>
+                    {  
+                        array.map((e,index) => {
+                            return (
+                                <div style={{ 
+                                        position: ((index < slideNumber)|((index-numberArr+1)>slideNumber)) ? 'absolute' : '',  
+                                        transform: ((index < slideNumber)|((index-numberArr+1)>slideNumber)) ? `translateX(${positionImg + index*100}%)` : '',
+                                        display: ((index < slideNumber)|((index-numberArr+1)>slideNumber)) ? 'none' : ''
+                                    }}
+                                    key={index+101}
+                                    className={styles.Brings__rowUp__row__item}
+                                >
+                                    <SliderItem1 
+                                        name={`Авокадо__${e}`}
+                                    />
+                                </div>
+                            )    
+                        })
+                    } 
+                </div>
+            </div>         
              </div>
-            
                </div>
         </div>
     

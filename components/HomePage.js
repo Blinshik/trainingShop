@@ -1,10 +1,16 @@
-import React from 'react'
+import {React, useState} from 'react'
 import styles from '../styles/HomePage.module.scss'
 import Courusel from '../components/Courusel.js'
 import Slider from '../components/Slider.js'
+import Footer from '../components/Footer.js'
 //import SliderItem1 from '../components/SliderItem1.js'
 
 export default function HomePage() {
+
+    const [checking, commentChecked] = useState(false)
+
+    const checkF = () => commentChecked(!checking)
+
     return (
         
         <div>
@@ -153,7 +159,13 @@ export default function HomePage() {
                     <textarea placeholder={'Ваш вопрос, отзыв или пожелание*'} className={styles.feedback__comment__place}></textarea>
                 </div>
                 <div className={styles.feedback__checkbox}>
-                    <button className={styles.feedback__checkbox__btn}></button>
+                        
+                        <button className={styles.feedback__checkbox__btn} onClick={checkF}>
+                            <div 
+                                className={styles.feedback__checkbox__checked} 
+                                style={{ display: (checking == true) ? 'block' : 'none'  }}
+                            >+</div>
+                        </button>             
                     <div className={styles.feedback__checkbox__text}>
                          Настоящим подтверждаю, что я ознакомлен и согласен с условиями оферты и политики конфиденциальности *
                     </div>
@@ -165,60 +177,7 @@ export default function HomePage() {
             </div>
         </div>
     </div>
-    <div className={styles.sizingPadding + ' ' + styles.bgcFooter}>
-        <div className={styles.sizingMargin}>
-            <div className={styles.footer}>
-                <div className={styles.footer__up}>
-                    <div className={styles.footer__up__left}>
-                        <div className={styles.footer__up__leftItem}>
-                            <div className={styles.footer__up__left__title}>О магазине Марком</div>
-                            <div className={styles.footer__up__left__item}>О магазине Марком</div>
-                            <div className={styles.footer__up__left__item}>О магазине Марком</div>
-                            <div className={styles.footer__up__left__item}>О магазине Марком</div>
-                            <div className={styles.footer__up__left__item}>О магазине Марком</div>
-                            <div className={styles.footer__up__left__item}>О магазине Марком</div>
-                        </div>
-                        <div className={styles.footer__up__leftItem}>
-                            <div className={styles.footer__up__left__title}>О магазине Марком</div>
-                            <div className={styles.footer__up__left__item}>О магазине Марком</div>
-                            <div className={styles.footer__up__left__item}>О магазине Марком</div>
-                            <div className={styles.footer__up__left__item}>О магазине Марком</div>
-                            <div className={styles.footer__up__left__item}>О магазине Марком</div>
-                        </div>
-                        <div className={styles.footer__up__leftItem}>
-                            <div className={styles.footer__up__left__title}>О магазине Марком</div>
-                            <div className={styles.footer__up__left__item}>О магазине Марком</div>
-                            <div className={styles.footer__up__left__item}>О магазине Марком</div>
-                        </div>
-                    </div>
-                    <div>
-                        <div className={styles.footer__up__left__title}>Мы в соц. сетях</div>
-                        <div className={styles.footer__imgs}></div>
-                        <div className={styles.footer__up__numbers}>
-                            <div className={styles.footer__up__numbers__big}>+7(800) 800-80-80</div>
-                            <div className={styles.footer__up__numbers__cmall}>справочная служба</div>
-                        </div>
-                        <div className={styles.footer__up__numbers}>
-                            <div className={styles.footer__up__numbers__big}>+7(800) 800-80-80</div>
-                            <div className={styles.footer__up__numbers__cmall}>справочная служба</div>
-                        </div>
-                    </div>
-                </div>
-                <div className={styles.footer__down}>
-                    <img src={'/markom_logo.svg'}></img>
-                    <div className={styles.footer__imgs}></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div className={styles.sizingPadding}>
-        <div className={styles.sizingMargin}>
-            <div className={styles.foot}>
-                <p className={styles.foot__left}>© 2020 Любое использование контента без письменного разрешения запрещено</p>
-                <div className={styles.foot__left}>Интернет-магазин создан на InSales</div>
-            </div>
-        </div>
-    </div>
+    <Footer />
 
 
     </div>

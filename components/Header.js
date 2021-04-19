@@ -36,9 +36,9 @@ export default function index() {
                 <button className={styles.btnCatalog}>Каталог</button>
                 <div className={styles.SearchForm}>
                     <form action="">
-                        <input type={styles.text} placeholder={styles.Поиск} className={styles.Search} />
+                        <input type={'text'} placeholder={'Поиск'} className={styles.Search} />
                         <button className={styles.SearchBtn}>
-                            <Icon>search</Icon>
+                            <Icon className={styles.SearchBtn__img}>search</Icon>
                         </button>
                     </form>
                 </div>

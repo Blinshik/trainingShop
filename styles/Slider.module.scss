@@ -29,7 +29,8 @@
 
             &__BigArrow {
                 margin-right: 15px;
-            
+                border: none;
+                background: none;
                 font-size: 35px;
                 font-weight: 600;
             }
@@ -38,7 +39,21 @@
         
     }
 
-    &__row {
-        display: flex;
+    &__rowUp {
+        height: 400px;
+        overflow: hidden;
+        position: relative;
+
+        &__row {
+            display: grid;
+           // justify-content: space-between;
+            grid-template-columns: repeat(6, 1fr);
+            grid-column-gap: 1rem;
+
+            &__item {
+                transition: 1s;
+            }
+        }
     }
+    
 }

@@ -124,11 +124,36 @@
 
 .Search {
     width: 100%;
+    min-width: 150px;
+    flex-grow: 1;
+    border: 1px solid #808080;
+    border-radius: 6px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: none;
+    font-size: 16px;
+    color: #333333;
+    padding: 6px 10px;
 }
 
 .SearchBtn {
-    width: 50px;
+    min-width: 50px;
     height: 50px;
+    cursor: pointer;
+    border-radius: 6px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    background-color: #1f7d63;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+
+    &__img {
+        font-size: 1.5rem;
+        color: white;
+    }
+    
 }
 
 .headerIcons {
