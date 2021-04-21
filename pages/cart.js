@@ -4,8 +4,14 @@ import Slider from '../components/Slider.js'
 import styles from '../styles/Cart.module.scss'
 import HeaderFooterLayout from '../components/HeaderFooterLayout.js'
 import {connect} from 'react-redux'
+import {removeCart} from '../redux/actions.js'
 
-function Cart({array}) {
+function Cart({array, removeCart}) {
+    let totalCost = 0
+    array.forEach((el) => {
+        totalCost = totalCost + (el.counter + 1)*el.item.price
+    });
+
     return (
         <HeaderFooterLayout>
             <Head>
@@ -18,16 +24,51 @@ function Cart({array}) {
             </div>
             <div className={styles.sizingPadding}>
                 <div className={styles.sizingMargin}>
-                    <ul>
-                    {
-                        array.map((e,i) => {
-                            return (
-                                <li key={i+1000}>{e.name}</li>
-                            )   
-                        })
-                    }
-                    </ul>
-                    
+                <div className={styles.empty} style={{display: array.length ? 'none' : ''}} > Ваша корзина пуста</div>
+                    <div className={styles.cartItems} style={{display: !array.length ? 'none' : ''}}>
+                        <ul className={styles.ul}>
+                        {
+                             
+                            array.map((e,i) => {
+                                let removeHandler = () => {
+                                    removeCart(e)
+                                  }
+                                return (
+                                    <li key={i+1000} className={styles.cartItems__item}>
+                                        <img src={e.item.img} className={styles.cartItems__item__img}></img>
+                                            <div className={styles.cartItems__item__name}>
+                                                {e.item.name}
+                                            </div>
+                                            <div className={styles.cartItems__item__price}>
+                                                {e.item.price} руб
+                                            </div>
+                                            <div className={styles.cartItems__item__btn}>
+                                                <button className={styles.cartItems__item__btn__minus}>-</button>
+                                                <div className={styles.cartItems__item__btn__counter}>
+                                                    {e.counter+1}
+                                                </div>
+                                                <button className={styles.cartItems__item__btn__plus}>+</button>
+                                            </div>
+                                            <button 
+                                                className={styles.cartItems__item__delete}
+                                                onClick={removeHandler}
+                                            >
+                                                X</button>
+                                            <div className={styles.cartItems__item__cost}>{e.item.price*(e.counter+1)} руб</div>
+                                    </li>
+                                )   
+                            })
+                        }
+                        </ul>
+                        <div className={styles.cartItems__summ}>
+                            <div className={styles.cartItems__summ__text}>Итого:</div>
+                            <div className={styles.cartItems__summ__number}>
+                                { 
+                                   totalCost
+                                }
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <Slider />               
@@ -42,4 +83,9 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, null)(Cart)
+const mapDispatchToProps = {
+    removeCart
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cart)

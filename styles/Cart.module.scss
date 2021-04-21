@@ -14,3 +14,135 @@
     font-size: 32px;
     padding-bottom: 2rem;
 }
+
+.empty {
+    color: black;
+}
+
+.ul {
+    padding: 0;
+    margin: 0;
+}
+
+.cartItems {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: 5fr 2fr;
+
+    &__item {
+        display: grid;
+        grid-template-areas:
+        "image name name delete"
+        "image price price price"
+        "image counter total total"
+        "image . . .";
+        grid-auto-columns: 162px auto auto 1.5rem;
+        gap: 1rem;
+        list-style: none;
+        text-decoration: none;
+        margin-bottom: 1.75rem;
+
+        &__img {
+            width: 162px;
+            height: 162px;
+            grid-area: image;
+        }
+
+        &__name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            line-height: 1.8rem;
+            color: #333333;
+            grid-area: name;
+        }
+
+        &__price {
+            color: #1f7d63;
+            grid-area: price;
+        }
+
+        &__btn {
+            display: flex;
+            grid-area: counter;
+
+            &__minus {
+                font-size: 1rem; 
+                width: 30px;               
+                padding: 7px;
+                cursor: pointer;
+                background-color: #1f7d63;
+                border: none;
+                border-radius: 6px 0 0 6px;
+                color: white;
+                line-height: 1; 
+                &:hover{
+                    background-color: #279b7a;
+                }         
+            }
+
+            &__counter {
+                border: 0;
+                color: white;
+                text-align: center;
+                border-radius: 0;
+                outline: none;
+                box-shadow: none;
+                width: 5rem;
+                font-size: 1rem;
+                font-weight: bold;
+                padding: 6px 8px;
+                background-color: #1f7d63;
+                
+            }
+
+            &__plus {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                font-size: 1rem;              
+                padding: 7px;
+                cursor: pointer;
+                background-color: #1f7d63;
+                border: none;
+                border-radius:  0 6px 6px 0 ;
+                color: white;
+                line-height: 1;
+                width: 30px;
+                &:hover{
+                    background-color: #279b7a;
+                }
+            }
+        }
+        
+        &__cost {
+            grid-area: total;
+            font-size: 1.5rem;
+            line-height: 1.8rem;
+            justify-self: end;
+        }
+
+        &__delete {
+            grid-area: delete;
+            color: #999999;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            line-height: 0;
+            font-size: 100%;
+            background: inherit;
+            min-height: 1.5rem;
+        }
+    }
+    
+    &__summ {
+        display: flex;
+        max-height: 140px;
+        padding: 1.5rem;
+        border-radius: 6px;
+        background-color: #f7f7f7;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.8rem;
+        justify-content: space-between;
+    }
+}
+

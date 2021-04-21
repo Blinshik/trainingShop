@@ -4,10 +4,9 @@ import { connect } from 'react-redux';
 import styles from '../styles/SliderItem1.module.scss';
 import addCart from '../redux/actions.js'
 
-function SliderItem1({itemCart, addCart, state}) {
+function SliderItem1({itemCart, addCart}) {
     const cartHandler = () => {
         addCart(itemCart)
-        console.log(state);
     }
 
     return (
@@ -42,14 +41,7 @@ const mapDispatchToProps = {
     addCart
 }
 
-const mapStateToProps = state => {
-    return {
-       state,
-        array: state.carts.cartItems
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(SliderItem1)
+export default connect(null, mapDispatchToProps)(SliderItem1)
 
 
 
