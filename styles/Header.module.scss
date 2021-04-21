@@ -40,7 +40,7 @@
         display: flex;
         margin: 0;
         padding: 0;
-        justify-content: start;
+        justify-content: flex-start;
         width: 100%;
     }
     
@@ -156,11 +156,21 @@
     
 }
 
+.headerIconsCart {
+    display: flex;
+    text-decoration: none;
+
+    &:visited {
+        color: #1f7d63;
+    }
+}
+
 .headerIcons {
     height: 28px;
     width: 28px;
     position: relative;
     margin-left: 25px;
+    color: black;
 }
 
 .headerIconsCounter {
@@ -180,4 +190,5 @@
 .cartPrice {
     margin-left: 15px;
     white-space: nowrap;
+    color: #1f7d63;
 }

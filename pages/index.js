@@ -1,15 +1,14 @@
 import Head from 'next/head'
-import Header from '../components/Header.js'
 import HomePage from '../components/HomePage.js'
+import HeaderFooterLayout from '../components/HeaderFooterLayout.js'
 
 export default function index() {
     return (
-        <>
+        <HeaderFooterLayout>
             <Head>
-                <title>Shop</title>
+                <title>Markom</title>
             </Head>
-            <Header />
             <HomePage />
-        </> 
+        </HeaderFooterLayout> 
     )
 }

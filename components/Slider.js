@@ -1,10 +1,10 @@
 import {React, useState} from 'react'
 import styles from '../styles/Slider.module.scss'
 import SliderItem1 from '../components/SliderItem1.js'
+import {connect} from 'react-redux'
 
 
-export default function Slider() {
-    const array = ['1q','2w','3e','4r','5t','6y','7u','8i']
+function Slider({array}) {
     const numberArr = 6;
 
     const [positionImg, posChange] = useState(0);
@@ -52,7 +52,7 @@ export default function Slider() {
                                     className={styles.Brings__rowUp__row__item}
                                 >
                                     <SliderItem1 
-                                        name={`Авокадо__${e}`}
+                                      itemCart={e}
                                     />
                                 </div>
                             )    
@@ -67,6 +67,12 @@ export default function Slider() {
     )
 }
 
+const mapStateToProps = state => {
+    return {
+        array: state.items.items
+    }
+}
 
+export default connect(mapStateToProps, null)(Slider)
 
 

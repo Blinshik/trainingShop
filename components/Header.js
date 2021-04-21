@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from '../styles/Header.module.scss'
 import Icon from '@material-ui/core/Icon';
+import Link from 'next/link'
 
 
 
@@ -32,7 +33,12 @@ export default function index() {
     <div className={styles.sizingPadding}>
         <div className={styles.wrapperLogo + ' ' + styles.sizingMargin}>
             <div className={styles.WrapperLogo__Left}>
-                <img src="/markom_logo.svg" alt="Logo" className={styles.logo} />
+                <Link href={'/'}>
+                    <a>
+                        <img src="/markom_logo.svg" alt="Logo" className={styles.logo} />
+                    </a>
+                </Link>
+                
                 <button className={styles.btnCatalog}>Каталог</button>
                 <div className={styles.SearchForm}>
                     <form action="">
@@ -55,13 +61,18 @@ export default function index() {
                     </Icon>
                     <div className={styles.headerIconsCounter}>0</div>
                 </div>
-                <div className={styles.headerIcons}>
-                    <Icon>
-                        shopping_cart
-                    </Icon>
-                    <div className={styles.headerIconsCounter}>0</div>
-                </div>
-                <div className={styles.cartPrice}>0 руб.</div>
+                <Link href={'/cart'}>
+                    <a className={styles.headerIconsCart}>
+                        <div className={styles.headerIcons}>
+                            <Icon>
+                                shopping_cart
+                            </Icon>
+                            <div className={styles.headerIconsCounter}>0</div>
+                        </div>
+                        <div className={styles.cartPrice}>0 руб.</div>
+                    </a>
+                </Link>
+                
             </div>
         </div>
     </div>
