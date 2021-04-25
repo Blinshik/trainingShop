@@ -1,14 +1,15 @@
 .newBringsSlider {
-
+    height: 100%;
+    
     &__item {
     position: relative;
     padding: 10px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(2, max-content) 1fr;
     line-height: 1.25;
     height: 100%;
-    display: grid;
-    grid-template-rows: repeat(3, max-content);
-    grid-template-columns: 100%;
-    box-sizing: border-box;
 
     &__img {
         width: 100%;

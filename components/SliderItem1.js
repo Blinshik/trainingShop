@@ -15,11 +15,17 @@ function SliderItem1({itemCart, addCart}) {
                 <div>
                     <img src={itemCart.img} alt={itemCart.name} className={styles.newBringsSlider__item__img} />
                 </div>
-                <div className={styles.newBringsSlider__item__sale}>{itemCart.sale}</div>
+                <div 
+                    className={styles.newBringsSlider__item__sale}
+                    style={{display: (itemCart.oldPrice) ? 'block' : 'none'}}
+                >{Math.round(100*(itemCart.price/itemCart.oldPrice - 1))}%</div>
                 
                         <div className={styles.newBringsSlider__item__name}> {itemCart.name} , 1 шт.</div>
                         <div className={styles.newBringsSlider__item__afterImg}>
-                            <div className={styles.newBringsSlider__item__afterImg__priceOld}>{itemCart.oldPrice} руб</div>
+                            <div
+                                className={styles.newBringsSlider__item__afterImg__priceOld}
+                                style={{display: (itemCart.oldPrice) ? 'block' : 'none'}}
+                            >{itemCart.oldPrice} руб</div>
                             <div className={styles.newBringsSlider__item__afterImg__priceNew}>{itemCart.price} руб</div>
                             <button 
                                 className={styles.newBringsSlider__item__afterImg__priceBtn}
@@ -40,6 +46,7 @@ function SliderItem1({itemCart, addCart}) {
 const mapDispatchToProps = {
     addCart
 }
+
 
 export default connect(null, mapDispatchToProps)(SliderItem1)
 

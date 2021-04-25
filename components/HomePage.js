@@ -2,8 +2,6 @@ import {React, useState} from 'react'
 import styles from '../styles/HomePage.module.scss'
 import Courusel from '../components/Courusel.js'
 import Slider from '../components/Slider.js'
-import Footer from '../components/Footer.js'
-//import SliderItem1 from '../components/SliderItem1.js'
 
 export default function HomePage() {
 
@@ -19,30 +17,29 @@ export default function HomePage() {
     
      <div className={styles.sizingPadding}>
          <div className={styles.sizingMargin + ' ' + styles.lines} >
-             <div className={styles.line}>
-                 <div className={styles.firstLineItem}>
-                     <img src="/tort.webp" alt="Tort" className={styles.firstLineItemImg} />
+                 <div className={styles.firstLineItemF}>
+                     <img src="/tort.webp" alt="Tort" className={styles.LineItemImg} />
                      <div className={styles.firstLineItemText}>Торты, десерты, сладкая выпечка</div>
                  </div>
-                 <div className={styles.firstLineItem}>
-                    <img src="/tort.webp" alt="Tort" className={styles.firstLineItemImg} />
+                 <div className={styles.firstLineItemS}>
+                    <img src="/tort.webp" alt="Tort" className={styles.LineItemImg} />
                     <div className={styles.firstLineItemText}>Торты, десерты, сладкая выпечка</div>
                 </div>
-             </div>
-             <div className={styles.line}>
-                    <div className={styles.secondLineItem}>
-                        <img src="/tort.webp" alt="Tort" className={styles.secondLineItemImg} />
+             
+            
+                    <div className={styles.secondLineItemF}>
+                        <img src="/tort.webp" alt="Tort" className={styles.LineItemImg} />
                         <div className={styles.firstLineItemText}>Торты, десерты, сладкая выпечка</div>
                     </div>           
-                    <div className={styles.secondLineItem}>
-                        <img src="/tort.webp" alt="Tort" className={styles.secondLineItemImg} />
+                    <div className={styles.secondLineItemS}>
+                        <img src="/tort.webp" alt="Tort" className={styles.LineItemImg} />
                         <div className={styles.firstLineItemText}>Торты, десерты, сладкая выпечка</div>
                     </div>
-                    <div className={styles.secondLineItem}>
-                        <img src="/tort.webp" alt="Tort" className={styles.secondLineItemImg} />
+                    <div className={styles.secondLineItemT}>
+                        <img src="/tort.webp" alt="Tort" className={styles.LineItemImg} />
                         <div className={styles.firstLineItemText}>Торты, десерты, сладкая выпечка</div>
                     </div> 
-             </div>
+             
          </div>
      </div>
      <div className={styles.sizingPadding}>

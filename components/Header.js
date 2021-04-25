@@ -1,24 +1,58 @@
-import React from 'react'
+import {React, useState} from 'react'
 import styles from '../styles/Header.module.scss'
 import Icon from '@material-ui/core/Icon';
 import Link from 'next/link'
+import {connect} from 'react-redux'
 
 
 
-export default function index() {
+function Header({array}) {
+    const[style, styleChange] = useState({
+        visibility: 'hidden',
+        transform: 'translate3d(-100%, 0, 0)'
+    })
+
+    const burgerHandler = () => {
+        if(style.visibility === 'hidden') {
+            styleChange({
+                transform: 'translate3d(0, 0, 0)',
+                visibility: 'visible'
+            })
+        } else {
+            styleChange({
+                visibility: 'hidden',
+                transform: 'translate3d(-100%, 0, 0)'
+            })
+        }
+    }
+
+    let totalCost = 0
+    array.forEach((el) => {
+        totalCost = totalCost + (el.counter + 1)*el.item.price
+    });
+
+    let totalCounter = 0
+    array.forEach((el) => {
+        totalCounter = totalCounter + el.counter +1
+    });
+
+
     return (
         <div>
              <div className={styles.sticky}>12333</div>
-    <div className={styles.headermini}>
+    <div 
+        className={styles.headermini}
+        style={style}
+    >
         <nav className={styles.sizingMargin}>
             <ul>
                 <li>Каталог</li>
-                <li>О компании</li>
-                <li>Контакты</li>
-                <li>Доставка</li>
-                <li>Оплата</li>
-                <li>Личный кабинет</li>
-                <li>Блог</li>
+                <li className={styles.about}>О компании</li>
+                <li className={styles.contacts}>Контакты</li>
+                <li className={styles.comes}>Доставка</li>
+                <li className={styles.pay}>Оплата</li>
+                <li className={styles.lk}>Личный кабинет</li>
+                <li className={styles.blog}>Блог</li>
                 <li className={styles.NavHidden}>...</li>
             </ul>
             <div className={styles.wrapper}>
@@ -30,12 +64,17 @@ export default function index() {
             </div>
         </nav>
     </div>
-    <div className={styles.sizingPadding}>
+    <div className={styles.sizingPadding + ' ' + styles.ups}>
         <div className={styles.wrapperLogo + ' ' + styles.sizingMargin}>
-            <div className={styles.WrapperLogo__Left}>
+        <button 
+            className={styles.btnLogo}
+            onClick={burgerHandler}
+        >|||</button>
+            
+                
                 <Link href={'/'}>
-                    <a>
-                        <img src="/markom_logo.svg" alt="Logo" className={styles.logo} />
+                    <a className={styles.wrapperLogo__a}>
+                        <img src="/markom_logo.svg" alt="Logo" className={styles.wrapperLogo__a__logo} />
                     </a>
                 </Link>
                 
@@ -48,7 +87,7 @@ export default function index() {
                         </button>
                     </form>
                 </div>
-            </div>
+            
             <div className={styles.WrapperLogo__right}>
                 <div className={styles.headerIcons}>
                     <Icon>
@@ -63,13 +102,17 @@ export default function index() {
                 </div>
                 <Link href={'/cart'}>
                     <a className={styles.headerIconsCart}>
-                        <div className={styles.headerIcons}>
+                        <div className={styles.headerIcons + ' ' + styles.iconCart}>
                             <Icon>
                                 shopping_cart
                             </Icon>
-                            <div className={styles.headerIconsCounter}>0</div>
+                            <div className={styles.headerIconsCounter}>
+                                {totalCounter}
+                            </div>
                         </div>
-                        <div className={styles.cartPrice}>0 руб.</div>
+                        <div className={styles.cartPrice}>
+                            {totalCost}
+                            руб.</div>
                     </a>
                 </Link>
                 
@@ -79,3 +122,11 @@ export default function index() {
         </div>
     )
 }
+
+const mapStateToProps = state => {
+    return {
+        array: state.carts.cartItems
+    }
+}
+
+export default connect(mapStateToProps, null)(Header)

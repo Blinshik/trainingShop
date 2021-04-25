@@ -19,6 +19,12 @@
     justify-content: center;
     position: relative;
     overflow: hidden;
+    @media(max-width:1228px) {
+        height: 380px;
+    }
+    @media(max-width:1028px) {
+        height: 300px;
+    }
 
     &__slider {
         position: absolute;
@@ -26,13 +32,25 @@
         width: 100%;
         display: flex;
         align-items: center;
-        font-size: 36px;
-        color:  black;
         background: no-repeat center;
         justify-content: center;
         background-size: contain;
         transition: .8s;
 
+        &__text {
+            padding: 1rem 5rem;
+            color:  black;
+            font-size: 3rem;
+            width: 100%;
+            text-align: center;
+            @media(max-width:1028px) {
+                font-size: 36px;
+            }
+            @media(max-width:768px) {
+                font-size: 18px;
+            }
+        }
+        
     }
 
     &__leftArrow {

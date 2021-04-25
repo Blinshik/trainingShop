@@ -6,6 +6,9 @@ import {connect} from 'react-redux'
 
 function Slider({array}) {
     const numberArr = 6;
+    
+       
+    
 
     const [positionImg, posChange] = useState(0);
 
@@ -28,7 +31,7 @@ function Slider({array}) {
 
 
     return (
-        <div className={styles.sizingPadding}>
+        <div className={styles.sizingPadding} >
          <div className={styles.sizingMargin}>
              <div className={styles.Brings}>
              <div className={styles.Brings__newBrings}>
@@ -43,7 +46,13 @@ function Slider({array}) {
                     {  
                         array.map((e,index) => {
                             return (
-                                <div style={{ 
+                                <div style={{
+                                    // @media(max-width: 1474px) {
+                                    //     $numberArr: 5
+                                    // },
+                                    // @media(max-width: 1240px) {
+                                    //     $numberArr: 4
+                                    // },
                                         position: ((index < slideNumber)|((index-numberArr+1)>slideNumber)) ? 'absolute' : '',  
                                         transform: ((index < slideNumber)|((index-numberArr+1)>slideNumber)) ? `translateX(${positionImg + index*100}%)` : '',
                                         display: ((index < slideNumber)|((index-numberArr+1)>slideNumber)) ? 'none' : ''

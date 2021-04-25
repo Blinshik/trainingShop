@@ -56,7 +56,8 @@ export default function Courusel() {
                         style={{ backgroundImage: `url('${e.urlI}')`,transform: `translateX(${number*100+positionImg}%)` }} 
                         key={number+5}
                     >
-                    {e.text}
+                        <div className={styles.imgSlider__slider__text}>{e.text}</div>
+                    
                   </div>
                   )            
                 })

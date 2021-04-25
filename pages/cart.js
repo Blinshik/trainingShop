@@ -4,13 +4,17 @@ import Slider from '../components/Slider.js'
 import styles from '../styles/Cart.module.scss'
 import HeaderFooterLayout from '../components/HeaderFooterLayout.js'
 import {connect} from 'react-redux'
-import {removeCart} from '../redux/actions.js'
+import {minusCart, removeCart, plusCart} from '../redux/actions.js'
 
-function Cart({array, removeCart}) {
+
+function Cart({array, removeCart, minusCart, plusCart}) {
     let totalCost = 0
     array.forEach((el) => {
         totalCost = totalCost + (el.counter + 1)*el.item.price
     });
+
+
+   
 
     return (
         <HeaderFooterLayout>
@@ -30,9 +34,18 @@ function Cart({array, removeCart}) {
                         {
                              
                             array.map((e,i) => {
-                                let removeHandler = () => {
+                                const removeHandler = () => {
                                     removeCart(e)
                                   }
+                                const minusHandler = () => {
+                                    minusCart(e)
+                                }
+
+                                const plusHandler = () => {
+                                    plusCart(e)
+                                }
+
+
                                 return (
                                     <li key={i+1000} className={styles.cartItems__item}>
                                         <img src={e.item.img} className={styles.cartItems__item__img}></img>
@@ -43,11 +56,17 @@ function Cart({array, removeCart}) {
                                                 {e.item.price} руб
                                             </div>
                                             <div className={styles.cartItems__item__btn}>
-                                                <button className={styles.cartItems__item__btn__minus}>-</button>
+                                                <button 
+                                                    className={styles.cartItems__item__btn__minus}
+                                                    onClick={minusHandler}
+                                                >-</button>
                                                 <div className={styles.cartItems__item__btn__counter}>
                                                     {e.counter+1}
                                                 </div>
-                                                <button className={styles.cartItems__item__btn__plus}>+</button>
+                                                <button
+                                                    className={styles.cartItems__item__btn__plus}
+                                                    onClick={plusHandler}
+                                                >+</button>
                                             </div>
                                             <button 
                                                 className={styles.cartItems__item__delete}
@@ -84,7 +103,10 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = {
-    removeCart
+    plusCart,
+    removeCart,
+    minusCart
+    
 }
 
 

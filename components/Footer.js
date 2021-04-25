@@ -30,22 +30,25 @@ export default function Footer() {
                             <div className={styles.footer__up__left__item}>О магазине Марком</div>
                         </div>
                     </div>
-                    <div>
-                        <div className={styles.footer__up__left__title}>Мы в соц. сетях</div>
-                        <div className={styles.footer__imgs}></div>
-                        <div className={styles.footer__up__numbers}>
-                            <div className={styles.footer__up__numbers__big}>+7(800) 800-80-80</div>
-                            <div className={styles.footer__up__numbers__cmall}>справочная служба</div>
+                    <div className={styles.footer__up__web}>
+                        <div className={styles.footer__up__left__titleUp}>Мы в соц. сетях</div>
+                        <div className={styles.footer__imgsUp}></div>
+                        <div className={styles.footer__up__contacts}>
+                            <div className={styles.footer__up__contacts__numbers}>
+                                <div className={styles.footer__up__contacts__numbers__big}>+7(800) 800-80-80</div>
+                                <div className={styles.footer__up__contacts__numbers__cmall}>справочная служба</div>
+                            </div>
+                            <div className={styles.footer__up__contacts__numbers}>
+                                <div className={styles.footer__up__contacts__numbers__big}>+7(800) 800-80-80</div>
+                                <div className={styles.footer__up__contacts__numbers__cmall}>справочная служба</div>
+                            </div>
                         </div>
-                        <div className={styles.footer__up__numbers}>
-                            <div className={styles.footer__up__numbers__big}>+7(800) 800-80-80</div>
-                            <div className={styles.footer__up__numbers__cmall}>справочная служба</div>
-                        </div>
+                        
                     </div>
                 </div>
                 <div className={styles.footer__down}>
                     <img src={'/markom_logo.svg'}></img>
-                    <div className={styles.footer__imgs}></div>
+                    <div className={styles.footer__imgsDown}></div>
                 </div>
             </div>
         </div>

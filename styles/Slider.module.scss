@@ -1,3 +1,10 @@
+@media(max-width: 1474px) {
+    $numberArr: 5
+};
+@media(max-width: 1240px) {
+    $numberArr: 4
+}
+
 .sizingPadding {
     padding-right: 40px;
     padding-left: 40px;
@@ -13,6 +20,7 @@
 .Brings {
     padding: 30px 0;
     overflow: hidden;
+    
 
     &__newBrings {
         display: flex;
