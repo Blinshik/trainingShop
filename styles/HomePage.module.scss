@@ -4,14 +4,18 @@
 }
 
 .sizingPadding {
-    padding: 23px 40px;
+    padding: 0 40px;
     box-sizing: border-box;
+    @media(max-width:768px){
+        padding: 0 15px;
+    }
 }
 
 .sizingMargin {
     margin: 0 auto;
     box-sizing: border-box;
     max-width: 1408px;
+    padding: 15px 0;
 }
 
 .imgSlider {
@@ -196,7 +200,6 @@
     padding: 16px 40px;
 
     &__img {
-        height: 190px;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -208,12 +211,17 @@
             font-size: 32px;
             line-height: 1.2;
             font-weight: 700;
+            margin-bottom: 1.5rem;
+            @media(max-width: 768px) {
+                font-size: 24px;
+            }
         }
 
         &__text {
             color: white;
             font-size: 1.5rem;
             line-height: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         &__btn {
@@ -261,6 +269,7 @@
     @media(max-width: 768px){
         display: grid;
         grid-template-columns: repeat(4, 1fr);
+        overflow: auto;
     }
 }
 
@@ -319,6 +328,9 @@
         @media(max-width: 924px){
             grid-template-columns: 1fr 1fr;
         }
+        @media(max-width: 582px){
+            grid-template-columns: 1fr;
+        }
     }
 
     .promotions{
@@ -364,7 +376,7 @@
             }
             @media(max-width: 768px){
                 grid-template-columns: 1fr;
-                grid-template-rows: 1fr 1fr 1fr;
+                grid-template-rows: repeat(3, max-content);
             }
         }
 
@@ -405,15 +417,22 @@
                 'name mail'
             ;
             grid-template-columns: 1fr 1fr;
-            grid-template-columns: .5fr .5fr;
             grid-column-gap: 2rem;
             align-items: self-start;
             margin-bottom: 2rem;
             text-align: left;
+            @media(max-width:534px) {
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                "nameForm"
+                "name"
+                "mailForm"
+                "mail";
+                grid-row-gap: .5rem;
+            }
 
             &__name {
                 height: 40px;
-                width: 100%;
                 padding: 6px 10px;
                 color: #333333;
                 background-color: #f7f7f7;
@@ -433,11 +452,12 @@
             margin-bottom: 3rem;
             text-align: left;
             height: 115px;
+            display: grid;
+            grid-template-columns: 1fr;
             
             &__place {
                 resize: none;
                 height: 115px;
-                width: 100%;
                 padding: 6px 10px;
                 color: #333333;
                 background-color: #f7f7f7;
@@ -503,6 +523,9 @@
                 border-style: none;
                 cursor: pointer;
                 line-height: 1;
+                @media(max-width:300px) {
+                    min-width: 0;
+                }
                 &:hover{
                     background-color: #279b7a;
                 }

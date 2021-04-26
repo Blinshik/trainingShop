@@ -47,7 +47,7 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className={styles.footer__down}>
-                    <img src={'/markom_logo.svg'}></img>
+                    <img className={styles.footer__down__img} src={'/markom_logo.svg'}></img>
                     <div className={styles.footer__imgsDown}></div>
                 </div>
             </div>

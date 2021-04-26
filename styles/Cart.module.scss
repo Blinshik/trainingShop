@@ -1,13 +1,16 @@
 .sizingPadding {
-    padding-right: 40px;
-    padding-left: 40px;
+    padding: 0 40px;
     box-sizing: border-box;
+    @media(max-width:768px){
+        padding: 0 15px;
+    }
 }
 
 .sizingMargin {
     margin: 0 auto;
     box-sizing: border-box;
     max-width: 1408px;
+    padding: 15px 0;
 }
 
 .cart {
@@ -28,6 +31,10 @@
     display: grid;
     grid-gap: 2rem;
     grid-template-columns: 5fr 2fr;
+    @media(max-width:768px) {
+        grid-auto-rows: max-content auto;
+        grid-template-columns: 1fr;
+    }
 
     &__item {
         display: grid;
@@ -41,11 +48,22 @@
         list-style: none;
         text-decoration: none;
         margin-bottom: 1.75rem;
+        @media(max-width:480px) {
+            grid-auto-columns: 80px auto auto auto 1.5rem;
+            grid-template-areas:
+            "image price price price delete"
+            "image name name name name"
+            "counter counter counter total total";
+        }
 
         &__img {
             width: 162px;
             height: 162px;
             grid-area: image;
+            @media(max-width:480px) {
+                width: 80px;
+                height: 80px;
+            }
         }
 
         &__name {

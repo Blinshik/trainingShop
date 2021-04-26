@@ -1,12 +1,16 @@
 .sizingPadding {
-    padding: 23px 40px;
+    padding: 0 40px;
     box-sizing: border-box;
+    @media(max-width:768px){
+        padding: 0 15px;
+    }
 }
 
 .sizingMargin {
     margin: 0 auto;
     box-sizing: border-box;
     max-width: 1408px;
+    padding: 15px 0;
 }
 
 .footer {
@@ -98,6 +102,9 @@
             @media(max-width: 768px) {
                 display: flex;
             }
+            @media(max-width: 455px) {
+                display: block;
+            }
             
             &__numbers {margin-right: 2rem;
                 font-weight: bold;
@@ -142,6 +149,13 @@
         grid-template-columns: auto 300px;
         padding-top: 1.5rem;
         align-items: center;
+
+        &__img {
+            @media(max-width: 455px) {
+                width: 100%;
+            }
+            
+        }
         
         @media(max-width: 768px) {
             padding-bottom: 1rem;
@@ -165,13 +179,18 @@
     justify-content: space-between;
     grid-template-columns: auto 300px;
     @media(max-width: 768px) {
-        display: block;
+        grid-auto-flow: row;
+        gap: 1rem;
+        grid-template-columns: auto;
     }
 
     &__left {
         white-space: nowrap;
         margin: 0;
         font-size: 0.9rem;
+        @media(max-width: 768px) {
+            white-space: unset;
+        }
     }
 }
    

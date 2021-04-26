@@ -7,15 +7,18 @@
 }
 
 .sizingPadding {
-    padding-right: 40px;
-    padding-left: 40px;
+    padding: 0 40px;
     box-sizing: border-box;
+    @media(max-width:768px){
+        padding: 0 15px;
+    }
 }
 
 .sizingMargin {
     margin: 0 auto;
     box-sizing: border-box;
     max-width: 1408px;
+    padding: 15px 0;
 }
 
 .sticky {
@@ -40,7 +43,7 @@
     padding: 0 40px;
     transition: .3s;
     z-index: 2000;
-    @media(min-width:768px){
+    @media(min-width:769px){
         transform: translate3d(0, 0, 0) !important;
         visibility: visible !important;
     }
@@ -236,22 +239,17 @@
 
          &__logo {
             width: 220px;
+            max-width: 100%;
             height: 51px;
             margin-right: 20px;
+            @media(max-width:768px){
+                margin-right: 0;
+            }
      }
      
     }
     
 }
-
-// .WrapperLogo__Left {
-//     display: flex;
-//     justify-content: space-between;
-//     width: 100%;
-//     @media(max-width: 768px){
-//         justify-content: center;
-//      }
-// }
 
 .WrapperLogo__right {
     display: flex;
