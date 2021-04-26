@@ -9,6 +9,10 @@ export default function HomePage() {
 
     const checkF = () => commentChecked(!checking)
 
+    const [nameChecked, nameCheckedHook] = useState('aAaAa')
+    const [mailChecked, mailCheckedHook] = useState('aAaAa')
+    const [textChecked, textCheckedHook] = useState('aAaAa')
+
     return (
         
         <div>
@@ -149,11 +153,51 @@ export default function HomePage() {
             <div className={styles.feedback}>
                 <div className={styles.feedback__textHead}>Обратная связь</div>
                 <div className={styles.feedback__nameForm}>
-                    <input className={styles.feedback__nameForm__name} placeholder={'Имя*'}></input>
-                    <input className={styles.feedback__nameForm__name} placeholder={'Ваша почта*'}></input>
+                    <input
+                        onChange={(e) => {nameCheckedHook(e.target.value)}}
+                        onFocus={() => {
+                            if(!nameChecked){nameCheckedHook('aAaAa')}}
+                        }
+                        onBlur={() => {
+                            if(nameChecked === 'aAaAa'){nameCheckedHook('')}
+                        }} 
+                        className={styles.feedback__nameForm__name} placeholder={'Имя*'}
+                        style={{gridArea: 'nameForm'}} 
+                    ></input>
+                    
+                    <input 
+                        className={styles.feedback__nameForm__name} placeholder={'Ваша почта*'}
+                        onChange={(e) => {mailCheckedHook(e.target.value)}}
+                        onFocus={() => {
+                            if(!mailChecked){mailCheckedHook('aAaAa')}}
+                        }
+                        onBlur={() => {
+                            if(mailChecked === 'aAaAa'){mailCheckedHook('')}
+                        }} 
+                        style={{gridArea: 'mailForm'}} 
+                    ></input>
+                    <span
+                       style={{color: 'red', display: (nameChecked) ? "none" : "block", gridArea: 'name'}}
+                    >Необходимо заполнить поле Имя</span>
+                    <span
+                        style={{color: 'red', display: (mailChecked) ? "none" : "block", gridArea: 'mail'}}
+                    >Не верно заполнено поле Email</span>
                 </div>
                 <div className={styles.feedback__comment}>
-                    <textarea placeholder={'Ваш вопрос, отзыв или пожелание*'} className={styles.feedback__comment__place}></textarea>
+                    <textarea 
+                        onChange={(e) => {textCheckedHook(e.target.value)}}
+                        onFocus={() => {
+                            if(!textChecked){textCheckedHook('aAaAa')}}
+                        }
+                        onBlur={() => {
+                            if(textChecked === 'aAaAa'){textCheckedHook('')}
+                        }} 
+                        placeholder={'Ваш вопрос, отзыв или пожелание*'} 
+                        className={styles.feedback__comment__place}
+                    ></textarea>
+                    <span
+                        style={{color: 'red', display: (textChecked) ? "none" : "block"}} 
+                    >Пожалуйста, введите сообщение</span>
                 </div>
                 <div className={styles.feedback__checkbox}>
                         

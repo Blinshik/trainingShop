@@ -161,6 +161,50 @@
     }
 }
 
+.falls {
+    position: absolute;
+    background-color: blanchedalmond !important;
+    top: 38px;
+    min-width: 160px;
+    padding: 5px 10px;
+    z-index: 500000;
+    @media(min-width: 1240px) {
+        &__blog {
+            display: none;
+        }
+    }
+    
+    @media(min-width: 1188px) {
+        &__lk {
+            display: none;
+        }
+    }
+    
+    @media(min-width: 1045px) {
+        &__pay {
+            display: none;
+        }
+    }
+    
+    @media(min-width: 944px) {
+        &__comes {
+            display: none;
+        }
+    }
+    
+    @media(min-width: 858px) {
+        &__contacts {
+            display: none;
+        }
+    }
+    
+    @media(min-width: 800px) {
+        &__about {
+            display: none;
+        }
+    }
+}
+
 .marginNumber {
     margin-right: 30px;
     white-space: nowrap;

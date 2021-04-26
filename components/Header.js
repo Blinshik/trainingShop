@@ -36,6 +36,14 @@ function Header({array}) {
         totalCounter = totalCounter + el.counter +1
     });
 
+    const [fallsCheck, permFalls] = useState(false)
+    const [xCoord, permXCoord] = useState(0)
+
+    const fallsHandler = (e) => {
+        permFalls(!fallsCheck)
+        permXCoord(e.clientX)
+        console.log(xCoord);
+    }
 
     return (
         <div>
@@ -53,7 +61,24 @@ function Header({array}) {
                 <li className={styles.pay}>Оплата</li>
                 <li className={styles.lk}>Личный кабинет</li>
                 <li className={styles.blog}>Блог</li>
-                <li className={styles.NavHidden}>...</li>
+                <li 
+                    className={styles.NavHidden}
+                    onClick={fallsHandler}
+                >...</li>
+                <li 
+                    className={styles.falls}
+                    style={{
+                        display: fallsCheck ? 'block' : 'none',
+                        left: `${xCoord}px`
+                    }}
+                >
+                    <div className={styles.falls__about}>О компании</div>
+                    <div className={styles.falls__contacts}>Контакты</div>
+                    <div className={styles.falls__comes}>Доставка</div>
+                    <div className={styles.falls__pay}>Оплата</div>
+                    <div className={styles.falls__lk}>Личный кабинет</div>
+                    <div className={styles.falls__blog}>Блог</div>
+                </li>
             </ul>
             <div className={styles.wrapper}>
                 <div className={styles.marginNumber}>Доставка с 8:00 до 23:00</div>

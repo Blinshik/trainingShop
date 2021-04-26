@@ -400,7 +400,12 @@
 
         &__nameForm {
             display: grid;
+            grid-template-areas: 
+                'nameForm mailForm'
+                'name mail'
+            ;
             grid-template-columns: 1fr 1fr;
+            grid-template-columns: .5fr .5fr;
             grid-column-gap: 2rem;
             align-items: self-start;
             margin-bottom: 2rem;
@@ -425,7 +430,7 @@
         }
 
         &__comment {
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
             text-align: left;
             height: 115px;
             
