@@ -9,7 +9,9 @@
     "dev": "next dev",
     "start": "next start",
     "predeploy": "npm run build",
-    "export": "next export"
+    "export": "next export",
+    "lint": "prettier --check .",
+    "format": "prittier --wrrite ."
   },
   "dependencies": {
     "@material-ui/core": "^4.11.3",
@@ -22,13 +24,13 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "CI=true npm run test",
-      "pre-commit": "CI=true npm run test"
+      "pre-commit": "npm run format"
     }
   },
   "devDependencies": {
     "gh-pages": "^3.1.0",
     "husky": "^6.0.0",
+    "prettier": "2.2.1",
     "webpack": "^5.33.2"
   }
 }

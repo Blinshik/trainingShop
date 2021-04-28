@@ -2,6 +2,7 @@ import {React, useState} from 'react'
 import styles from '../styles/HomePage.module.scss'
 import Courusel from '../components/Courusel.js'
 import Slider from '../components/Slider.js'
+import SliderFlex from '../components/SliderFlex.js'
 
 export default function HomePage() {
 
@@ -17,6 +18,7 @@ export default function HomePage() {
         
         <div>
             <Courusel />
+           {/* // <SliderFlex /> */}
             <Slider  />
     
      <div className={styles.sizingPadding}>
