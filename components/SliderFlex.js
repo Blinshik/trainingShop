@@ -69,7 +69,7 @@ function SliderFlex({array}) {
                                 <div 
                                     key={index+101}
                                     className={styles.Brings__rowUp__row__item}
-                                    style={{}}
+                                    style={{transform: `translateX(${positionImg}%)`}}
                                 >
                                     <SliderItem1 
                                       itemCart={e}

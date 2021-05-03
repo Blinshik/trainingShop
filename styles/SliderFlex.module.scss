@@ -57,13 +57,31 @@
 
         &__row {
             display: flex;
-            justify-content: safe start;
+            justify-content: space-between;
 
             &__item {
                 transition: 1s;
                 position: relative;
+                flex-shrink: 0;
+                @media(min-width: 1360px){
+                    flex-basis: 16.66%;
+                }
+                @media(max-width:1360px){
+                    flex-basis: 20%;
+                }
+                @media(max-width:1140px){
+                    flex-basis: 25%;
+                }
+                @media(max-width:930px){
+                    flex-basis: 33.33%;
+                }
+                @media(max-width:500px){
+                    flex-basis: 50%;
+                }
+                @media(max-width:340px){
+                    flex-basis: 100%;
+                }
             }
         }
-    }
-    
+    } 
 }

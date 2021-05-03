@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import React from 'react'
-import Slider from '../components/Slider.js'
+import SliderFlex from '../components/SliderFlex.js'
 import styles from '../styles/Cart.module.scss'
 import HeaderFooterLayout from '../components/HeaderFooterLayout.js'
 import {connect} from 'react-redux'
@@ -90,7 +90,7 @@ function Cart({array, removeCart, minusCart, plusCart}) {
                     </div>
                 </div>
             </div>
-            <Slider />               
+            <SliderFlex />             
         </HeaderFooterLayout>
        
     )

@@ -18,8 +18,8 @@ export default function HomePage() {
         
         <div>
             <Courusel />
-           {/* // <SliderFlex /> */}
-            <Slider  />
+            <SliderFlex />
+            
     
      <div className={styles.sizingPadding}>
          <div className={styles.sizingMargin + ' ' + styles.lines} >
@@ -59,8 +59,8 @@ export default function HomePage() {
              </div>
          </div>
      </div>
-     <Slider  />
-     <Slider  />
+     <SliderFlex />
+     <SliderFlex />
     
     <div className={styles.sizingPadding}>
         <div className={styles.sizingMargin}>
@@ -84,7 +84,7 @@ export default function HomePage() {
             </div>
         </div>
     </div>
-    <Slider  />
+    <SliderFlex />
     <div className={styles.sizingPadding}>
         <div className={styles.sizingMargin}>
             <div className={styles.plusHeadText}>Акции</div>
