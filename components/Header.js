@@ -7,21 +7,26 @@ import {connect} from 'react-redux'
 
 
 function Header({array}) {
+    const [isOpen, setIsOpen] = useState(true)
+
     const[style, styleChange] = useState({
         visibility: 'hidden',
-        transform: 'translate3d(-100%, 0, 0)'
+        transform: 'translate3d(-100%, 0, 0)',
     })
+
+    const [fallsCheck, permFalls] = useState(false)
+    const [xCoord, permXCoord] = useState(0)
 
     const burgerHandler = () => {
         if(style.visibility === 'hidden') {
             styleChange({
                 transform: 'translate3d(0, 0, 0)',
-                visibility: 'visible'
+                visibility: 'visible',
             })
         } else {
             styleChange({
                 visibility: 'hidden',
-                transform: 'translate3d(-100%, 0, 0)'
+                transform: 'translate3d(-100%, 0, 0)',
             })
         }
     }
@@ -36,18 +41,41 @@ function Header({array}) {
         totalCounter = totalCounter + el.counter +1
     });
 
-    const [fallsCheck, permFalls] = useState(false)
-    const [xCoord, permXCoord] = useState(0)
-
     const fallsHandler = (e) => {
         permFalls(!fallsCheck)
         permXCoord(e.clientX)
-        console.log(xCoord);
+    }
+
+    const openHandler = () => {
+        setIsOpen(!isOpen)
     }
 
     return (
-        <div>
-             <div className={styles.sticky}>12333</div>
+    <div>
+        <div 
+            className={styles.sticky}
+            style={{ top: isOpen ? "0" : "-42px" }}
+        >
+            Здесь может быть ваша реклама
+            <div 
+                className={styles.sticky__btn}
+                style={{ top: isOpen ? "42px" : "0" }}
+                onClick={openHandler}
+            >
+                <Icon
+                    style={{ 
+                        transform: isOpen ? "rotate(0)" : "rotate(180deg)",
+                        transition: '.5s'
+                    }}
+                >
+                    expand_more
+                </Icon>
+            </div>
+        </div>
+        <div 
+            style={{ marginTop: isOpen ? "42px" : "0" }}
+            className={styles.marginTop}
+        ></div>
     <div 
         className={styles.headermini}
         style={style}
@@ -64,7 +92,11 @@ function Header({array}) {
                 <li 
                     className={styles.NavHidden}
                     onClick={fallsHandler}
-                >...</li>
+                >
+                    <Icon>
+                        more_horiz
+                    </Icon>   
+                </li>
                 <li 
                     className={styles.falls}
                     style={{
@@ -89,21 +121,28 @@ function Header({array}) {
             </div>
         </nav>
     </div>
-    <div className={styles.sizingPadding + ' ' + styles.ups}>
+    <div 
+        className={styles.sizingPadding}
+    >
         <div className={styles.wrapperLogo + ' ' + styles.sizingMargin}>
         <button 
             className={styles.btnLogo}
             onClick={burgerHandler}
-        >|||</button>
-            
-                
+        >
+            <span className="material-icons-outlined">
+                menu
+            </span>
+        </button>
                 <Link href={'/'}>
                     <a className={styles.wrapperLogo__a}>
                         <img src="/markom_logo.svg" alt="Logo" className={styles.wrapperLogo__a__logo} />
                     </a>
                 </Link>
                 
-                <button className={styles.btnCatalog}>Каталог</button>
+                <button className={styles.btnCatalog}>
+                    <Icon>menu</Icon>
+                    Каталог
+                </button>
                 <div className={styles.SearchForm}>
                     <form action="">
                         <input type={'text'} placeholder={'Поиск'} className={styles.Search} />
@@ -140,7 +179,6 @@ function Header({array}) {
                             руб.</div>
                     </a>
                 </Link>
-                
             </div>
         </div>
     </div>

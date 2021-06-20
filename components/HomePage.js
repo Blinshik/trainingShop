@@ -1,7 +1,6 @@
 import {React, useState} from 'react'
 import styles from '../styles/HomePage.module.scss'
 import Courusel from '../components/Courusel.js'
-import Slider from '../components/Slider.js'
 import SliderFlex from '../components/SliderFlex.js'
 
 export default function HomePage() {
@@ -15,37 +14,31 @@ export default function HomePage() {
     const [textChecked, textCheckedHook] = useState('aAaAa')
 
     return (
-        
-        <div>
+    <div>
             <Courusel />
             <SliderFlex />
-            
-    
      <div className={styles.sizingPadding}>
          <div className={styles.sizingMargin + ' ' + styles.lines} >
-                 <div className={styles.firstLineItemF}>
-                     <img src="/tort.webp" alt="Tort" className={styles.LineItemImg} />
-                     <div className={styles.firstLineItemText}>Торты, десерты, сладкая выпечка</div>
-                 </div>
-                 <div className={styles.firstLineItemS}>
+                <div className={styles.firstLineItemF}>
                     <img src="/tort.webp" alt="Tort" className={styles.LineItemImg} />
                     <div className={styles.firstLineItemText}>Торты, десерты, сладкая выпечка</div>
                 </div>
-             
-            
-                    <div className={styles.secondLineItemF}>
-                        <img src="/tort.webp" alt="Tort" className={styles.LineItemImg} />
-                        <div className={styles.firstLineItemText}>Торты, десерты, сладкая выпечка</div>
-                    </div>           
-                    <div className={styles.secondLineItemS}>
-                        <img src="/tort.webp" alt="Tort" className={styles.LineItemImg} />
-                        <div className={styles.firstLineItemText}>Торты, десерты, сладкая выпечка</div>
-                    </div>
-                    <div className={styles.secondLineItemT}>
-                        <img src="/tort.webp" alt="Tort" className={styles.LineItemImg} />
-                        <div className={styles.firstLineItemText}>Торты, десерты, сладкая выпечка</div>
-                    </div> 
-             
+                <div className={styles.firstLineItemS}>
+                    <img src="/tort.webp" alt="Tort" className={styles.LineItemImg} />
+                    <div className={styles.firstLineItemText}>Торты, десерты, сладкая выпечка</div>
+                </div>
+                <div className={styles.secondLineItemF}>
+                    <img src="/tort.webp" alt="Tort" className={styles.LineItemImg} />
+                    <div className={styles.firstLineItemText}>Торты, десерты, сладкая выпечка</div>
+                </div>           
+                <div className={styles.secondLineItemS}>
+                    <img src="/tort.webp" alt="Tort" className={styles.LineItemImg} />
+                    <div className={styles.firstLineItemText}>Торты, десерты, сладкая выпечка</div>
+                </div>
+                <div className={styles.secondLineItemT}>
+                    <img src="/tort.webp" alt="Tort" className={styles.LineItemImg} />
+                    <div className={styles.firstLineItemText}>Торты, десерты, сладкая выпечка</div>
+                </div> 
          </div>
      </div>
      <div className={styles.sizingPadding}>
@@ -61,7 +54,6 @@ export default function HomePage() {
      </div>
      <SliderFlex />
      <SliderFlex />
-    
     <div className={styles.sizingPadding}>
         <div className={styles.sizingMargin}>
             <div className={styles.plusHeadText}>Наши плюсы</div>
@@ -210,21 +202,15 @@ export default function HomePage() {
                             >+</div>
                         </button>             
                     <div className={styles.feedback__checkbox__text}>
-                         Настоящим подтверждаю, что я ознакомлен и согласен с условиями оферты и политики конфиденциальности *
+                        Настоящим подтверждаю, что я ознакомлен и согласен с условиями оферты и политики конфиденциальности *
                     </div>
                 </div>
                 <div className={styles.feedback__container}>
                     <button className={styles.feedback__container__btn}>Отправить</button>
                 </div>
-                
             </div>
         </div>
     </div>
-    
-
-
-    </div>
-        
-        
+    </div>    
     )
 }

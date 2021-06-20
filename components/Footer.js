@@ -56,8 +56,8 @@ export default function Footer() {
     <div className={styles.sizingPadding}>
         <div className={styles.sizingMargin}>
             <div className={styles.foot}>
-                <p className={styles.foot__left}>© 2020 Любое использование контента без письменного разрешения запрещено</p>
-                <div className={styles.foot__left}>Интернет-магазин создан на InSales</div>
+                <p className={styles.foot__left}>© 2021</p>
+                <div className={styles.foot__left}>Интернет-магазин создан с использованием Next.js</div>
             </div>
         </div>
     </div>

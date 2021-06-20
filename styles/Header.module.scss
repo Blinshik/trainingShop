@@ -23,25 +23,45 @@
 
 .sticky {
     position: fixed;
-    top: 0;
     width: 100%;
     height: 42px;
-    background-color: black;
+    background-color: #404145;
     z-index: 10000;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    transition: .5s;
+
+    @media(max-width: 370px) {
+        font-size: 15px;
+    }
+
+    &__btn {
+        position: fixed;
+        height: 14px;
+        right: 11px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: white;
+        background-color: #404145;
+        cursor: pointer;
+        transition: .5s;
+    }
 }
 
-.ups{
-    @media(max-width:768px) {
-        margin-top: 42px;
-    }
-    
+.marginTop {
+    transition: .5s;
+    height: 0;
+    margin-top: 42px;
 }
 
 .headermini {
     background-color: #f7f7f7;
-    margin-top: 42px;
     padding: 0 40px;
-    transition: .3s;
+    transition: .5s;
     z-index: 2000;
     @media(min-width:769px){
         transform: translate3d(0, 0, 0) !important;
@@ -72,6 +92,9 @@
         padding: 0;
         justify-content: flex-start;
         width: 100%;
+        align-items: center;
+        white-space: nowrap;
+
         @media(max-width:768px){
             display: block;
         }
@@ -91,6 +114,8 @@
 
     @media(max-width: 768px){
        display: block;
+       border: none;
+       background: none;
     }
 }
 
@@ -154,11 +179,13 @@
 
 .NavHidden {
     display: none;
+
     @media(max-width: 1240px) {
-        
-            display: block;
-        
+        display: flex;
+        align-self: center;
+        cursor: pointer;  
     }
+
     @media(max-width:768px){
         display: none;
     }
@@ -217,6 +244,10 @@
     padding-right: 15px;
     border-right: 1px solid black;
     margin-right: 15px;
+
+    @media(max-width: 768px){
+        border: none;
+     }
 }
 
 .wrapperLogo {
@@ -268,7 +299,6 @@
     background-color: #1f7d63;
     display: flex;
     align-items: center;
-    justify-content: center;
     padding: 0 16px;
     border-style: none;
     cursor: pointer;
@@ -276,12 +306,9 @@
             background-color: #279b7a;
         }
 
-        
-        
-            @media(max-width: 768px){
-               display: none;
-            }
-        
+        @media(max-width: 768px){
+        display: none;
+        } 
 }
 
 .SearchForm {
@@ -382,9 +409,11 @@
     background-color: red;
     width: 16px;
     height: 16px;
-    text-align: center;
     color: white;
     font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .cartPrice {

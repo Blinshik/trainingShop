@@ -13,9 +13,6 @@ function Cart({array, removeCart, minusCart, plusCart}) {
         totalCost = totalCost + (el.counter + 1)*el.item.price
     });
 
-
-   
-
     return (
         <HeaderFooterLayout>
             <Head>
@@ -92,7 +89,6 @@ function Cart({array, removeCart, minusCart, plusCart}) {
             </div>
             <SliderFlex />             
         </HeaderFooterLayout>
-       
     )
 }
 
@@ -108,6 +104,5 @@ const mapDispatchToProps = {
     minusCart
     
 }
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cart)

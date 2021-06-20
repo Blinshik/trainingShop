@@ -5,15 +5,15 @@ export default function Courusel() {
 
     const array = [
         {
-            urlI:'/products.jpg',
+            urlI:'/sliderImg.webp',
             text:'Премиум продукты высокого качества'
         },
         {
-            urlI:'/products.jpg',
+            urlI:'/sliderImg.webp',
             text:'Здоровая еда'
         },
         {
-            urlI:'/products.jpg',
+            urlI:'/sliderImg.webp',
             text:'Вкусная еда'
         },
     ]
@@ -56,7 +56,7 @@ export default function Courusel() {
                         style={{ backgroundImage: `url('${e.urlI}')`,transform: `translateX(${number*100+positionImg}%)` }} 
                         key={number+5}
                     >
-                        <div className={styles.imgSlider__slider__text}>{e.text}</div>
+                    <div className={styles.imgSlider__slider__text}>{e.text}</div>
                     
                   </div>
                   )            
@@ -80,10 +80,16 @@ export default function Courusel() {
                 })
             }
             </div>
-           
-                
-              <button onClick={leftHandler} className={styles.imgSlider__leftArrow}> {`<`} </button>
-              <button onClick={rightHandler} className={styles.imgSlider__rightArrow}>{`>`}</button>
+                <button onClick={leftHandler} className={styles.imgSlider__leftArrow}> 
+                    <span className="material-icons-outlined" style={{ fontSize: "40px" }}>
+                        chevron_left
+                    </span>
+                </button>
+                <button onClick={rightHandler} className={styles.imgSlider__rightArrow}>
+                    <span className="material-icons-outlined" style={{ fontSize: "40px" }}>
+                        chevron_right
+                    </span>
+                </button>
         </div>
     </div>
     )

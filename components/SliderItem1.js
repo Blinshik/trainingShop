@@ -24,7 +24,7 @@ function SliderItem1({itemCart, addCart}) {
                         <div className={styles.newBringsSlider__item__afterImg}>
                             <div
                                 className={styles.newBringsSlider__item__afterImg__priceOld}
-                                style={{display: (itemCart.oldPrice) ? 'block' : 'none'}}
+                                style={{visibility: itemCart.oldPrice ? 'visiable' : 'hidden'}}
                             >{itemCart.oldPrice} руб</div>
                             <div className={styles.newBringsSlider__item__afterImg__priceNew}>{itemCart.price} руб</div>
                             <button 

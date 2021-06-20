@@ -7,7 +7,7 @@
     box-sizing: border-box;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: repeat(2, max-content) 1fr;
+    grid-template-rows: 1fr repeat(2, max-content);
     line-height: 1.25;
     height: 100%;
 
@@ -29,7 +29,8 @@
     
     &__name {
         color: black;
-        margin-bottom: 16px;
+        padding: 8px 0 16px 0;
+        font-size: 18px;
     }
 
     &__afterImg {

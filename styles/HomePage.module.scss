@@ -163,7 +163,6 @@
 .lines {
     display: grid;
     padding: 16px 0;
-    // grid-template-columns: repeat(6, 1fr);
     align-items: self-start;
     grid-column-gap: 1.5rem;
     grid-row-gap: 1.5rem;
@@ -181,6 +180,16 @@
          grid-template-columns: repeat(2, 1fr);
          grid-template-rows: 1fr max-content max-content;
     }
+
+    @media(max-width: 550px) {
+        grid-template-areas:
+         "fLineF"
+         "fLineS"
+         "sLineF"
+         "sLineS" 
+         "sLineT";
+         grid-template-columns: 1fr;
+    }
 }
 
 .LineItemImg {
@@ -190,6 +199,9 @@
 
 .firstLineItemText {
     padding: 16px 24px;
+    border: 1px solid #f7f7f7;
+    color: #333333;
+    font-size: 1.5rem;
 }
 
 
