@@ -177,7 +177,7 @@
     font-size: 0.9rem;
     grid-auto-flow: column;
     justify-content: space-between;
-    grid-template-columns: auto 300px;
+    grid-template-columns: auto auto;
     @media(max-width: 768px) {
         grid-auto-flow: row;
         gap: 1rem;
