@@ -9,18 +9,28 @@ function SliderFlex({array}) {
     const [positionImg, posChange] = useState(0);
 
     const [slideNumber, slide] = useState(0)
+
+    let slides;
        
 
    const leftHandler = () => {
        if(slideNumber) {
-        slide(slideNumber - 1) 
-        posChange(positionImg + 100)
+            slide(slideNumber - 1) 
+            posChange(positionImg + 100)
        }
     }
 
     const rightHandler = () => {
+        if(slides < (array.length - slideNumber)) {
             slide(slideNumber + 1) 
             posChange(positionImg - 100)
+        }
+    }
+
+    const animeHandler = (e) => {
+        let itemWidth = e.target.clientWidth
+        let sliderWidth = e.target.parentElement.clientWidth
+        slides = Math.round(sliderWidth/itemWidth)
     }
 
 
@@ -62,9 +72,10 @@ function SliderFlex({array}) {
                                     key={index+101}
                                     className={styles.Brings__rowUp__row__item}
                                     style={{transform: `translateX(${positionImg}%)`}}
+                                    onTransitionEnd={animeHandler}
                                 >
                                     <SliderItem1 
-                                      itemCart={e}
+                                      itemCart={e} 
                                     />
                                 </div>
                             )    

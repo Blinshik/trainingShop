@@ -136,31 +136,31 @@
     }
 }
 
-@media(max-width: 1188px) {
+@media(max-width: 1230px) {
     .lk {
         display: none;
     }
 }
 
-@media(max-width: 1045px) {
+@media(max-width: 1080px) {
     .pay {
         display: none;
     }
 }
 
-@media(max-width: 944px) {
+@media(max-width: 1000px) {
     .comes {
         display: none;
     }
 }
 
-@media(max-width: 858px) {
+@media(max-width: 920px) {
     .contacts {
         display: none;
     }
 }
 
-@media(max-width: 800px) {
+@media(max-width: 820px) {
     .about {
         display: none;
     }
@@ -213,31 +213,31 @@
         }
     }
     
-    @media(min-width: 1188px) {
+    @media(min-width: 1230px) {
         &__lk {
             display: none;
         }
     }
     
-    @media(min-width: 1045px) {
+    @media(min-width: 1080px) {
         &__pay {
             display: none;
         }
     }
     
-    @media(min-width: 944px) {
+    @media(min-width: 1000px) {
         &__comes {
             display: none;
         }
     }
     
-    @media(min-width: 858px) {
+    @media(min-width: 920px) {
         &__contacts {
             display: none;
         }
     }
     
-    @media(min-width: 800px) {
+    @media(min-width: 820px) {
         &__about {
             display: none;
         }

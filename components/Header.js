@@ -115,9 +115,9 @@ function Header({array}) {
             <div className={styles.wrapper}>
                 <div className={styles.marginNumber}>Доставка с 8:00 до 23:00</div>
                 <div className={styles.marginNumber}>+7(800) 800-80-80</div>
-                <div className={styles.languages}>ES</div>
+                <div className={styles.languages}>RU</div>
                 <div className={styles.languages}>EN</div>
-                <div>RU</div>
+                <div>ES</div>
             </div>
         </nav>
     </div>
